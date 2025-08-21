@@ -63,8 +63,17 @@ function createChart(id, title, data) {
     },
   },
   yaxis: {
+    min: 0,
+    max: 100,
     show: true,
   },
+  tooltip: {
+    y: {
+      formatter: function (val) {
+        return val + " %"; // 👉 tooltip juga pakai persen
+      }
+    }
+  }
 }
 
 const chart = new ApexCharts(document.getElementById(id), options);
